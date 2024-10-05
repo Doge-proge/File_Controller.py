@@ -85,12 +85,12 @@ class FileRepository:
 
         with open(self.__f_name, "w") as f:
             for i in data:
-                f.write(data)
+                f.write(i)
 
     def search(self, place) -> bool:
         with open(self.__f_name, "r") as f:
             data = f.read().split()
             for i in data:
-                if place == data:
+                if place == i:
                     return True
             return False

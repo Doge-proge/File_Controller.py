@@ -44,7 +44,7 @@ def usage(func: int, o1: FileRepository):
             o1.replace(place1, place2)
         case 10:
             place = input("Enter a word you wanna find in the file: ")
-            o1.search(place)
+            print(o1.search(place))
 
 name = input("enter the name of the file")
 o1 = FileRepository(name)
