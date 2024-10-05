@@ -59,3 +59,38 @@ class FileRepository:
         with open(self.__f_name, "w") as f:
             for i in data:
                 f.write(i)
+
+    def replace(self, st_str, sec_str):
+        with open(self.__f_name, "r") as f:
+            data = f.read().split()
+            st_ind = []
+            sec_ind = []
+            index = 0
+            for i in data:
+                if i == st_str:
+                    st_ind.append(index)
+                elif i == sec_str:
+                    sec_ind.append(index)
+                index += 1
+
+            if len(st_ind) == len(sec_ind):
+                for i in range(0,len(st_ind)):
+                    data[st_ind[i]], data[sec_ind[i]] = data[sec_ind[i]], data[st_ind[i]]
+            elif len(st_ind) < len(sec_ind):
+                for i in range(0,len(st_ind)):
+                    data[st_ind[i]], data[sec_ind[i]] = data[sec_ind[i]], data[st_ind[i]]
+            elif len(st_ind) > len(sec_ind):
+                for i in range(0,len(sec_ind)):
+                    data[st_ind[i]], data[sec_ind[i]] = data[sec_ind[i]], data[st_ind[i]]
+
+        with open(self.__f_name, "w") as f:
+            for i in data:
+                f.write(data)
+
+    def search(self, place) -> bool:
+        with open(self.__f_name, "r") as f:
+            data = f.read().split()
+            for i in data:
+                if place == data:
+                    return True
+            return False

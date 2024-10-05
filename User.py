@@ -10,6 +10,8 @@ def User_int():
     print("6. Copy")
     print("7. Rename")
     print("8. Delete a word")
+    print("9. Replace")
+    print("10. Search")
 
 def usage(func: int, o1: FileRepository):
     match func:
@@ -36,6 +38,13 @@ def usage(func: int, o1: FileRepository):
         case 8:
             element_to_del = input("Enter the element you want to delet from the file: ")
             o1.delete_word(element_to_del)
+        case 9:
+            place1 = input("Enter 1 word you wanna replace in the file: ")
+            place2 = input("Enter 2 word you wanna replace with in the file: ")
+            o1.replace(place1, place2)
+        case 10:
+            place = input("Enter a word you wanna find in the file: ")
+            o1.search(place)
 
 name = input("enter the name of the file")
 o1 = FileRepository(name)
