@@ -5,8 +5,11 @@ class FileRepository:
     def __init__(self, filename) -> None:
         self.__f_name = filename
         self.__rline = 1
-        with open(self.__f_name, "w"):
+        if os.path.isfile(f"~/Desktop/preparations/{filename}"):
             pass
+        else:
+            with open(self.__f_name, "w"):
+                pass
 
     def read_lines(self, line):
         self.__rline = line
