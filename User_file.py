@@ -56,5 +56,6 @@ class FileRepository:
                     del data[index]
                     break
                 index += 1
+        with open(self.__f_name, "w") as f:
             for i in data:
                 f.write(i)
