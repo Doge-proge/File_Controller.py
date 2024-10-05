@@ -5,7 +5,7 @@ class FileRepository:
     def __init__(self, filename) -> None:
         self.__f_name = filename
         self.__rline = 1
-        if os.path.isfile(f"~/Desktop/preparations/{filename}"):
+        if os.path.isfile(f"./{filename}"):
             pass
         else:
             with open(self.__f_name, "w"):
