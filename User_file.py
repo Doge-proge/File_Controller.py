@@ -61,7 +61,7 @@ class FileRepository:
                 index += 1
         with open(self.__f_name, "w") as f:
             for i in data:
-                f.write(i)
+                f.write(i+" ")
 
     def replace(self, st_str, sec_str):
         with open(self.__f_name, "r") as f:
@@ -88,7 +88,7 @@ class FileRepository:
 
         with open(self.__f_name, "w") as f:
             for i in data:
-                f.write(i)
+                f.write(i+" ")
 
     def search(self, place) -> bool:
         with open(self.__f_name, "r") as f:
